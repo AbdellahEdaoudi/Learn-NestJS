@@ -1,6 +1,7 @@
 
 import { Body, Controller, Get, Param, ParseIntPipe, Post, Query } from '@nestjs/common';
 import { UserService } from './user.service';
+import { ValidationLog } from './Validation/validationLog.pipe';
 
 @Controller('user')
 export class UserController {
@@ -25,7 +26,8 @@ export class UserController {
 
   // Param
   @Get(":id")
-  getUser1(@Param("id") param:any){
+  getUser1(@Param("id",ValidationLog) param:any){
+    console.log(`this is Log 2 : ${param}`);
     console.log(param);
     // return this.userService.findUser()
   }
