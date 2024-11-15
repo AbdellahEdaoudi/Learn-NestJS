@@ -1,5 +1,5 @@
 
-import { Body, Controller, Get, Param, Post, Query } from '@nestjs/common';
+import { Body, Controller, Get, Param, ParseIntPipe, Post, Query } from '@nestjs/common';
 import { UserService } from './user.service';
 
 @Controller('user')
@@ -16,6 +16,13 @@ export class UserController {
     console.log(body);
     // return this.userService.findUser()
   }
+  // Pipes
+  @Get(":id")
+  getUser0(@Param("id",ParseIntPipe) id:number){
+    console.log(id);
+    // return this.userService.findUser()
+  }
+
   // Param
   @Get(":id")
   getUser1(@Param("id") param:any){
