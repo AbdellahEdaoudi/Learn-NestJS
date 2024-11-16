@@ -11,7 +11,7 @@ export class UserController {
   constructor(private userService:UserService){}
 
   @Get()
-  @Roles(['user'])
+  @Roles(['user',"admin"])
   @UseGuards(RolesGuard)
   async findAll(@Body(new ValidationPipe) createUser: CreateUser){
     console.log(createUser);
