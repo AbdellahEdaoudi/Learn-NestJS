@@ -4,7 +4,7 @@ import { AppService } from './app.service';
 import { UserModule } from './Users/user.module';
 import { LoggerMiddleware } from './Users/logger.middleware';
 import { APP_GUARD } from '@nestjs/core';
-import { RolesGuard } from './Users/Guards/role.guard';
+import { RolesGuard } from './Users/Guards/roles.guard';
 
 @Module({
   imports: [UserModule],
