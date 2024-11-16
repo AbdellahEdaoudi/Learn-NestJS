@@ -1,4 +1,4 @@
-import { IsString, IsNumber, IsEmail, IsOptional } from 'class-validator';
+import { IsString, IsNumber, IsEmail, IsOptional, IsEnum } from 'class-validator';
 
 export class CreateUser {
   @IsString()
@@ -14,4 +14,7 @@ export class CreateUser {
   @IsEmail()
   @IsOptional()
   email: string;
+  
+  @IsEnum(["user","admin"])
+  role:string
 }
